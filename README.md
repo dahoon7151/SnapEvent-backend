@@ -10,7 +10,57 @@ SnapEvent는 사용자가 원하는 브랜드의 세일 정보를 실시간으�
 
 ---
 
+### 🔧 프로젝트에서 맡은 작업
+
+- **백엔드 기능 구현**
+    - 회원정보 관련 기능 (JWT, OAuth2, Spring Security)
+    - 게시판 관련 기능
+    - 구독 관련 기능
+- **프론트엔드 CSS 및 UI 컴포넌트 구성**
+
+---
+
+### 🛠 사용한 기술 스택
+
+### **Backend**
+
+- Spring / Spring Boot, JPA, Spring Security, Java
+
+### **Frontend**
+
+- Styled-Components, React, Yarn
+
+### **Server / Deployment**
+
+- AWS EC2, AWS RDS, AWS Route 53, Node.js, Nginx
+
+### **Database**
+
+- MySQL, Redis
+
+### **OS**
+
+- Linux
+
+### **Collaboration**
+
+- Notion, Miro / Figma, Git / GitHub
+
+### **IDE / Tools**
+
+- IntelliJ, Visual Studio Code, Postman
+
+---
+
 ## 📌 초기 기획 및 설계
+
+- **Miro를 활용한 마인드맵 작성** → 서비스 구조 기획
+- **초기 Flow Chart, Wireframe 작성** → UI/UX 레이아웃 설계
+- **ERD(Entity-Relationship Diagram) 작성** → 데이터베이스 구조 설계
+- **Figma를 활용한 UI 구성** → 프론트엔드 개발 가이드라인 제공
+
+## 🔍 데이터베이스 설계 (ERD)
+![ERD Diagram](https://github.com/user-attachments/assets/cb75c3c6-82fc-4d73-bbb9-1c49bf6913a9)
 
 ### **Wireframe 및 UI 설계**
 ![Wireframe](https://github.com/user-attachments/assets/be34afc5-f558-4141-b241-837590acd8f8)
@@ -26,74 +76,79 @@ SnapEvent는 사용자가 원하는 브랜드의 세일 정보를 실시간으�
 
 ---
 
-## 🛠 사용한 기술 스택
-### **Backend**
-- Spring Boot, Java, JPA, Spring Security
-### **Frontend**
-- React, Styled-Components, Yarn
-### **Database**
-- MySQL, Redis
-### **Server / Deployment**
-- AWS EC2, AWS RDS, AWS Route 53, Node.js, Nginx
-### **Collaboration & Tools**
-- Git/GitHub, Notion, Miro, Figma, IntelliJ, Postman
+## 🔧 개발 단계
+
+### 🏗 백엔드 기능 구현
+
+🔗 [SnapEvent 백엔드 저장소](https://github.com/dahoon7151/SnapEvent-backend)
+
+### **회원정보 관련 기능**
+
+- **JWT 인증 방식 로그인 구현** (CSR 방식 적용)
+- **Spring Security 필터 적용** → 토큰 인증 방식의 보안 취약점 보완
+- Security Config 파일을 통한 Security 필터 관리
+- **OAuth2 소셜 로그인** (Google, Naver, Kakao)
+    - Spring Security OAuth2 라이브러리를 활용해 구현
+- **회원 관련 기능 구현**: 토큰 재발급, 회원가입, 로그아웃, 회원탈퇴, 회원정보 수정
+
+### **게시판 관련 기능**
+
+- **페이징 처리**를 적용한 게시물 목록 반환 API 구현
+- **AuthenticatedPrincipal 어노테이션**을 이용해 현재 사용자가 작성자인지 여부 확인
+- 게시글 엔티티의 Like 칼럼(boolean 값)을 확인하여 좋아요 등록/취소 구현
+- 게시글 및 댓글의 **작성, 수정, 조회, 삭제 기능** 구현
+
+### **구독 관련 기능**
+
+- 사용자가 원하는 브랜드를 구독할 수 있도록 구독 기능 구현
+- 비회원 사용자의 구독 정보를 **로컬스토리지에 저장** 후 로그인 유도
+    - 로그인 시 회원가입/로그인 API와 구독 API가 **동기식 처리**되도록 구현
+- 구독 취소, 조회 및 팔로워의 구독 리스트 조회 기능 구현
 
 ---
 
-## 📌 주요 기능
-✅ **회원 관리** (JWT + OAuth2 로그인, 회원가입, 로그아웃, 회원 정보 수정)  
-✅ **게시판 기능** (게시글/댓글 CRUD, 좋아요 기능, 페이징 처리)  
-✅ **구독 시스템** (브랜드 구독, 구독자 리스트, 비회원 구독 정보 유지)  
-✅ **프론트엔드 UI 개발 참여** (Styled-Components 활용, 모달 및 UI 컴포넌트 개발)  
+### 🔀 Git Flow 전략
+
+- `main / develop / feature` 브랜치 전략 적용, feature 브랜치를 develop으로 병합
 
 ---
 
-## 📄 API 명세서
-🔗 [API 명세서 (Notion)](https://www.notion.so/API-596be2293efd489387810d9e81c4c4aa?pvs=21)  
+### 📄 API 명세서 작성
+
+🔗 [API 명세서 (Notion)](https://www.notion.so/API-596be2293efd489387810d9e81c4c4aa?pvs=21)
 
 ---
 
-## 🔍 데이터베이스 설계 (ERD)
-![ERD Diagram](https://github.com/user-attachments/assets/cb75c3c6-82fc-4d73-bbb9-1c49bf6913a9)
+### 🎨 프론트엔드 개발 기여
+
+🔗 [SnapEvent 프론트엔드 저장소](https://github.com/Team-3-SnapEvent/SnapEvent-frontend)
+
+초기 계획에는 프론트엔드 개발이 포함되지 않았지만, 프로젝트 일정 문제로 프론트엔드 작업에도 참여함.
+
+- **Yarn**을 사용하여 팀원과 동일한 개발 환경 구축 및 빌드, 배포 진행
+- **Styled-Components**를 활용한 CSS 작성
+- **UX 최적화**: 모달창, 버튼, 셀렉트 박스 등의 UI 컴포넌트 구현
 
 ---
 
-## 🔀 Git Flow 전략
-- `main / develop / feature` 브랜치 전략 적용
-- 각 feature 브랜치를 develop으로 병합하여 협업 진행
+### ☁️ 배포 및 서버 인프라 구축
+
+### **도메인 및 서버 배포**
+
+- **가비아에서 도메인 구입 후 AWS Route 53을 사용하여 EC2 인스턴스와 연결**
+- **AWS RDS (MySQL) 생성 후 EC2와 연동**
+
+### **Nginx 리버스 프록시 설정**
+
+- `/api`로 시작하는 엔드포인트를 `localhost:8080`으로 연결
+- SSL 인증서를 적용하여 **HTTPS 프로토콜 적용**
+
+### **배포 구조**
+
+- 백엔드와 프론트엔드를 각각 배포하여 유지보수성 향상
+- 환경 변수 및 보안 설정을 통해 **안정적인 서비스 운영 가능**
 
 ---
-
-## 🛠 이슈 및 트러블슈팅
-
-### **CORS 에러 해결**
-- **문제:** Nginx, Spring Boot, React 간 API 요청 시 CORS 에러 발생
-- **해결:** `access-control-allow-credentials: true` 설정 추가 및 `access-control-allow-origin`에서 `*` 제거 후 특정 도메인 허용
-
-### **Spring Security 인증 객체 통합**
-- **문제:** 일반 로그인(`UserDetails`)과 소셜 로그인(`OAuth2User`)의 인증 객체가 달라 일관된 사용자 정보 관리가 어려움
-- **해결:** `CustomUserDetail` 클래스를 생성하여 두 객체를 통합, 로그인 방식과 관계없이 사용자 정보 관리 가능
-
-### **JWT 토큰 저장 방식 개선**
-- **문제:** 보안과 편리함을 고려한 JWT 저장 방식 결정 필요
-- **해결:**
-  - **Access Token**: JS Private 변수에 저장하여 보안 강화
-  - **Refresh Token**: DB와 HttpOnly Cookie에 저장하여 보안 유지
-
-### **서비스 성능 최적화**
-- **JPA Auditing 적용:** 엔티티의 생성 및 수정 시간을 자동 관리
-- **반정규화 적용:** 댓글 및 좋아요 개수를 엔티티 칼럼으로 저장하여 성능 최적화
-- **고아 객체 삭제 적용:** 게시글 삭제 시 연관된 댓글과 좋아요도 자동 삭제
-
----
-
-## ☁️ 배포 및 운영
-### **배포 환경**
-🔹 **AWS EC2**: 백엔드 서버 배포  
-🔹 **AWS RDS (MySQL)**: 데이터 저장  
-🔹 **AWS Route 53**: 도메인 연결  
-🔹 **Nginx**: 리버스 프록시 설정 및 SSL 적용  
-
 
 ![Image](https://github.com/user-attachments/assets/7fc26497-7c01-49d2-9887-db8eeab9c8c9)
 
@@ -101,20 +156,45 @@ SnapEvent는 사용자가 원하는 브랜드의 세일 정보를 실시간으�
 
 ---
 
-## 📢 회고 및 배운 점
-- **백엔드 API 최적화 및 보안 강화를 위한 JWT 및 OAuth2 적용 경험**  
-- **Redis를 활용한 데이터 캐싱 및 성능 최적화 고민**  
-- **Git Flow 전략을 활용한 협업 경험 및 CI/CD 적용 가능성 탐색**  
+## 🛠 이슈 및 트러블슈팅
+
+### **CORS 에러 해결**
+
+- **문제:** Nginx와 Spring Boot, React 간 API 요청 시 CORS 에러 발생
+- **원인 분석:** JWT를 포함한 요청에서만 CORS 에러 발생 → Credential 요청과 관련됨
+- **해결:** `access-control-allow-credentials: true` 설정 추가, `access-control-allow-origin`에서 * 제거 후 특정 도메인만 허용하여 문제 해결
+
+### **Spring Security 인증 객체 통합**
+
+- **문제:** 일반 로그인(`UserDetails`)과 소셜 로그인(`OAuth2User`)의 인증 객체가 달라 코드 일관성 부족
+- **원인 분석:** Spring Security 내부 구조를 분석하여 인증 객체를 통합할 필요성 발견
+- **해결:** `CustomUserDetail` 클래스를 생성하여 두 객체를 통합, 로그인 방식과 관계없이 일관된 방식으로 사용자 정보 관리 가능
+
+### **JWT 토큰 저장 방식 개선**
+
+- **문제:** JWT 인증의 보안성을 높이면서도 편리한 저장 방식 필요
+- **원인 분석:** Access Token과 Refresh Token의 보안성을 비교하여 저장 방식 결정 필요
+- **해결:**
+    - **Access Token**: JS Private 변수에 저장하여 보안 강화
+    - **Refresh Token**: DB와 HttpOnly Cookie에 저장하여 서버 검증 가능하도록 설정
+    - **Stateless 유지 고려:** Redis에 저장하는 방식도 검토했으나 서버 재시작 시 초기화 문제로 DB 저장 방식 선택
+
+### **서비스 성능 최적화**
+
+- **문제:** 데이터 처리 최적화를 통해 서비스 성능 향상 필요
+- **해결:**
+    - **JPA Auditing 적용:** 엔티티의 생성 및 수정 시간을 자동 관리하여 유지보수성 향상
+    - **반정규화 적용:** 댓글 및 좋아요 개수를 엔티티 칼럼으로 저장하여 매번 `GROUP BY` 수행을 방지하고 조회 성능 최적화
+    - **고아 객체 삭제 적용:** 게시글 삭제 시 연관된 댓글과 좋아요도 자동 삭제하여 불필요한 데이터 유지 방지
 
 ---
 
-## 👥 팀원
-👨‍💻 **Backend**: 강다훈, 팀원 A  
-🎨 **Frontend**: 팀원 B  
+**🎯 후기**
 
----
+이 프로젝트를 1년간 진행하면서 백엔드 개발에 대해 자신감도 얻게 되었고 새로 공부하게 된것도 너무 많았지만, 무엇보다 백엔드 개발자라는 진로를 스스로 확고하게 할 수 있게 된것이 가장 뜻깊었습니다. 
 
-## 📬 Contact
-이메일: [dahoon7151@gmail.com](mailto:dahoon7151@gmail.com)  
-GitHub: [https://github.com/dahoon7151](https://github.com/dahoon7151)  
+ 처음 웹개발을 배울때는 로그 작성의 중요성을 몰랐고,  학교에서 소프트웨어 공학 수업을 들을때는 왜 ERD나 UML을 작성하는지 그 필요성을 느끼지 못했습니다. 프로젝트를 끝내고 나니 비로소 이론적으로만 알고 있었던 것들의 필요성을 느낄 수 있었습니다.
 
+ 원래 프론트엔드 개발은 경험이 없었고 할 계획도 없었지만 시간을 더 투자해 프론트엔드 개발에도 참여했습니다. 다른 팀원들보다 비교적 더 많은 분량의 작업을 했지만 그 덕에 풀스택 개발 경험을 할 수 있어 뜻깊었습니다. 
+
+누구보다도 적극적으로 프로젝트에 임했다는것이 스스로 칭찬하고 싶은 부분이고 익숙치 않은 기술이더라도 쉽게 받아들이고 일단 공부해서 해보려는 자세가 제 강점임을 확인할 수 있었습니다.
