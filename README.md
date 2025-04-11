@@ -22,33 +22,11 @@ SnapEvent는 사용자가 원하는 브랜드의 세일 정보를 실시간으�
 
 ### 🛠 사용한 기술 스택
 
-### **Backend**
-
-- Spring / Spring Boot, JPA, Spring Security, Java
-
-### **Frontend**
-
-- Styled-Components, React, Yarn
-
-### **Server / Deployment**
-
-- AWS EC2, AWS RDS, AWS Route 53, Node.js, Nginx
-
-### **Database**
-
-- MySQL, Redis
-
-### **OS**
-
-- Linux
-
-### **Collaboration**
-
-- Notion, Miro / Figma, Git / GitHub
-
-### **IDE / Tools**
-
-- IntelliJ, Visual Studio Code, Postman
+- `Spring Boot`, `JPA`, `Java`
+- `Styled-Components`, `React`
+- `AWS`, `Nginx`, `Linux`
+- `MySQL`
+- `Git / GitHub`
 
 ---
 
